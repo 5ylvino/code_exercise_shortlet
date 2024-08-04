@@ -166,7 +166,7 @@ The `package.json` includes several scripts for common tasks:
 
 ### API Documentation
 
-The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:3000/doc`.
+The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:<use_your_PORT_number>/doc`.
 
 ### Setting Up Swagger
 
