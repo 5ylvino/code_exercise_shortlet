@@ -34,8 +34,7 @@ Sylvester Ekweozor
 
 ### Environment Configuration
 
-Create a `.env` file at the root of the project and configure the following environment variables `.env.local`,
-then filling the values of the env as specifie
+Create a `.env` file at the root of the project and configure the following environment variables after copying the template from `.env.local`  as specified
 
 
 ### Scripts
