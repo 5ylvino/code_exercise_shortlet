@@ -4,6 +4,87 @@
 
 This project is a backend application using NestJS framework. It includes various functionalities and is well-documented using Swagger for API documentation. The application also integrates Sentry for error monitoring and uses several other packages to ensure robust and efficient performance.
 
+## Overview
+
+This project implements a REST API using TypeScript and the NestJS framework, integrating data from the REST Countries API. The main goal is to provide meaningful information through various endpoints, focusing on data handling, API design, security, performance optimization, and documentation. Key security and optimization features are highlighted in the `package.json` file.
+
+### `package.json` Highlights
+
+#### Security Features
+- **Helmet**: Helps secure the app by setting various HTTP headers 
+- **Passport**: Middleware for authentication
+- **JWT**: JSON Web Token support for secure authentication
+- **Rate Limiting**
+- **Class-validator and TypeORM for serialisation**
+- **Use env to keep sensitive data secured**
+- **Data Protection**
+
+#### Optimization Features
+- **Cache Manager**: Implements caching strategies to enhance performance.
+- **Sentry**: For error tracking and performance monitoring.
+- **Throttler**: Limits the number of requests to prevent abuse.
+- **Logger**: For error tracking.
+
+## Highlights of Interesting Challenges or Features
+
+### Cache
+Implementing caching was crucial for optimizing performance and reducing the load on the external REST Countries API. By caching responses, the API can serve data quickly and efficiently, especially for frequently requested endpoints.
+
+### Well-Written Codebase
+The codebase is structured to ensure maintainability and readability. Using NestJS, the project adheres to a modular architecture, making it easy to manage and scale. The implementation of services, controllers, and modules follows best practices, ensuring clean and organized code.
+
+### Security
+Security is a top priority in this project. Implementing JWT authentication and using Helmet for setting secure HTTP headers are some of the measures taken to protect the API from common vulnerabilities. Additionally, using Passport for authentication ensures that the API endpoints are secure. And many other profound measures are also used.
+
+## Aspects I'm Particularly Proud Of
+
+### Well-Written Codebase Maintainability
+The project features a clean and maintainable codebase, adhering to best practices and design patterns. The modular structure of NestJS ensures that each part of the application is organized and easy to manage. This makes the codebase not only easy to understand but also scalable for future enhancements.
+
+## Potential Improvements or Additional Features
+
+### Other Important Features
+If given more time, the following features could be implemented to further enhance the API:
+- **Rate Limiting**: Implementing more advanced rate limiting strategies to prevent abuse and ensure fair usage.
+- **User Management**: Implementing a user management system with roles and permissions to control access to different parts of the API.
+
+
+## Folder structure 
+```bash
+project-name/
+├── src/
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   ├── main.ts
+│   ├── auth/
+│   ├   ├── auth.***.ts
+│   ├   ├── entities/
+│   ├   ├── dto/
+│   ├   ├── plugins/
+│   ├── countries/
+│   ├   ├── countries.***.ts
+│   ├   ├── entities/
+│   ├   ├── dto/
+│   ├   ├── plugins/
+│   ├   ├   ├── rest-countries-vendor/
+│   ├── logger/
+│   ├   ├── logger.***.ts
+│   ├   ├── plugins/
+│   ├── utils/
+│   ├── decryption/
+│   ├── encryption/
+├── test/
+│   ├── app.e2e-spec.ts
+│   ├── jest-e2e.json
+├── node_modules/
+├── package.json
+├── tsconfig.json
+└── ...
+
+
+```
+
 ## Author
 
 Sylvester Ekweozor
@@ -91,7 +172,7 @@ The project uses Swagger for API documentation. Once the project is running, you
 
 ### Error Monitoring 
 
-**with Sentry**
+**with Sentry** \
 Sentry is integrated for error monitoring. Make sure to configure your Sentry DSN in the `.env` file. The project includes scripts to manage Sentry sourcemaps:
 
 - **Inject and upload sourcemaps:**
@@ -102,9 +183,12 @@ Sentry is integrated for error monitoring. Make sure to configure your Sentry DS
   yarn sentry:sourcemaps
   ```
 
-**with server log**
+**with server log** \
 We also extend the nextjs server logging to custom log file. To make it easy for tracking and tracing errors easily.
 The `nestjs.log` is located at the root of the project and it is an automatic generated file.
+
+### Conclusion
+This project demonstrates the implementation of a robust and efficient REST API using TypeScript and NestJS. It highlights my ability to handle data integration, API design, security, performance optimization, and maintainability. The modular structure and clean codebase ensure that the API is scalable and easy to manage.
 
 ### License
 
