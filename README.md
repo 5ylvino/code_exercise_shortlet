@@ -1,74 +1,112 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Backend Exercise - Sylvester
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Project Description
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project is a backend application using NestJS framework. It includes various functionalities and is well-documented using Swagger for API documentation. The application also integrates Sentry for error monitoring and uses several other packages to ensure robust and efficient performance.
 
-## Description
+## Author
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Sylvester Ekweozor
 
-## Installation
+## Project Setup
 
-```bash
-$ yarn install
-```
+### Prerequisites
 
-## Running the app
+- Node.js (v16.x or later)
+- Yarn (v1.x or later)
 
-```bash
-# development
-$ yarn run start
+### Installation
 
-# watch mode
-$ yarn run start:dev
+1. **Clone the repository:**
 
-# production mode
-$ yarn run start:prod
-```
+   ```bash
+   git clone https://github.com/your-repository/backend_exercise_sylvester.git
+   cd backend_exercise_sylvester
+   ```
 
-## Test
+2. **Install dependencies:**
 
-```bash
-# unit tests
-$ yarn run test
+   Using Yarn:
 
-# e2e tests
-$ yarn run test:e2e
+   ```bash
+   yarn install
+   ```
 
-# test coverage
-$ yarn run test:cov
-```
+### Environment Configuration
 
-## Support
+Create a `.env` file at the root of the project and configure the following environment variables `.env.local`,
+then filling the values of the env as specifie
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+### Scripts
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+The `package.json` includes several scripts for common tasks:
 
-## License
+- **Build the project:**
 
-Nest is [MIT licensed](LICENSE).
-# code_exercise_shortlet
+  Using Yarn:
+
+  ```bash
+  yarn build
+  ```
+
+- **Start the project:**
+
+  Using Yarn:
+
+  ```bash
+  yarn start
+  ```
+
+- **Start the project in development mode:**
+
+  Using Yarn:
+
+  ```bash
+  yarn start:dev
+  ```
+
+### Running the Application
+
+1. **Build the project:**
+
+   Using Yarn:
+
+   ```bash
+   yarn build
+   ```
+
+2. **Start the project:**
+
+   Using Yarn:
+
+   ```bash
+   yarn start
+   ```
+
+### API Documentation
+
+The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:3000/doc`.
+
+### Setting Up Swagger
+
+### Error Monitoring 
+
+**with Sentry**
+Sentry is integrated for error monitoring. Make sure to configure your Sentry DSN in the `.env` file. The project includes scripts to manage Sentry sourcemaps:
+
+- **Inject and upload sourcemaps:**
+
+  Using Yarn:
+
+  ```bash
+  yarn sentry:sourcemaps
+  ```
+
+**with server log**
+We also extend the nextjs server logging to custom log file. To make it easy for tracking and tracing errors easily.
+The `nestjs.log` is located at the root of the project and it is an automatic generated file.
+
+### License
+
+This project is licensed under the UNLICENSED License.
