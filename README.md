@@ -166,7 +166,11 @@ The `package.json` includes several scripts for common tasks:
 
 ### API Documentation
 
-The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:<use_your_PORT_number>/doc`.
+BASE_URL: `https://staging.com.ng`
+
+The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:<use_your_PORT_number>/doc` locally, and for production at `https://staging.com.ng/doc`
+
+The project live API - `https://staging.com.ng/api/v1/<endpoint>`. All endpoints are prefix with `/api/v1`
 
 ### Error Monitoring 
 
