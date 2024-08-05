@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthGuard, IS_PUBLIC_KEY } from './auth.guard';
+import { AuthGuard } from './auth.guard';
 import { JwtService } from '@nestjs/jwt';
 import { Reflector } from '@nestjs/core';
 import { UnauthorizedException } from '@nestjs/common';
@@ -39,6 +39,7 @@ describe('AuthGuard', () => {
   });
 
   describe('canActivate', () => {
+    //TODO
     // it('should return true if the route is public', async () => {
     //   const context = createMockExecutionContext(true, 'false');
 
@@ -72,6 +73,7 @@ describe('AuthGuard', () => {
       );
     });
 
+    //TODO
     // it('should attach user to request if token is valid', async () => {
     //   const context = createMockExecutionContext(false, 'valid-token');
     //   const payload = { userId: '123' };

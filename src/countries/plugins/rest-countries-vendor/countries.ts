@@ -1,5 +1,5 @@
 import { Client } from './client';
-import { ENDPOINTS } from './constant';
+import { ENDPOINTS, sampleForDefinition } from './constant';
 import { CountriesListProps, CountryProps } from './definitions';
 
 /**
@@ -80,7 +80,7 @@ export class Countries extends Client {
    * @param countryList Array
    * @returns
    */
-  regions(countries: Array<any>): Array<any> {
+  regions(countries: Array<typeof sampleForDefinition>) {
     return Object.entries(
       countries?.reduce((accumulatedCountries, country) => {
         const region = country?.region?.toLowerCase();
@@ -108,10 +108,10 @@ export class Countries extends Client {
    * @param countryList Array
    * @returns
    */
-  languages(countryList: Array<any>): any {
+  languages(countryList: Array<typeof sampleForDefinition>) {
     return countryList
       ?.flatMap((country) => Object.keys(country?.languages ?? {}))
-      ?.reduce((accumulatedLanguage, language) => {
+      ?.reduce((accumulatedLanguage: Array<string>, language) => {
         !accumulatedLanguage?.includes(language) &&
           accumulatedLanguage?.push(language);
         return accumulatedLanguage;
@@ -139,16 +139,16 @@ export class Countries extends Client {
    * This gives statistically analysis of a country
    * @returns
    */
-  statistics(countries: Array<any>) {
+  statistics(countries: Array<typeof sampleForDefinition>) {
     const totalCountries = countries.length;
-    const largestCountry = countries.reduce((prev, curr) =>
+    const largestCountry = countries?.reduce((prev, curr) =>
       prev.area > curr.area ? prev : curr,
     );
-    const smallestCountry = countries.reduce((prev, curr) =>
+    const smallestCountry = countries?.reduce((prev, curr) =>
       prev.population < curr.population ? prev : curr,
     );
     const languages = this.languages(countries);
-    const mostWidelySpokenLanguage = languages.reduce((prev, curr) =>
+    const mostWidelySpokenLanguage = languages?.reduce((prev, curr) =>
       prev.total_speakers > curr.total_speakers ? prev : curr,
     );
 

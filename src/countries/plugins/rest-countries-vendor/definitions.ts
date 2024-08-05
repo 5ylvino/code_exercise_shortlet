@@ -1,3 +1,5 @@
+import { sampleForDefinition } from './constant';
+
 export interface HttpClientProps {
   method: 'GET' | 'POST';
   params?: string;
@@ -13,10 +15,10 @@ export interface CountriesListProps {
   population?: number;
   page: number;
   limit?: number;
-  countries?: Array<any>;
+  countries?: Array<typeof sampleForDefinition>;
 }
 
 export interface CountryProps {
-  countries: Array<any>;
+  countries: Array<typeof sampleForDefinition>;
   country_name: string;
 }

@@ -53,12 +53,4 @@ describe('AuthController', () => {
       );
     });
   });
-
-  describe('getError', () => {
-    it('should throw an error', () => {
-      expect(() => controller.getError()).toThrowError(
-        'My first Sentry error!',
-      );
-    });
-  });
 });

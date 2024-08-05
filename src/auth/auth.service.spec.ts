@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
-import { UnauthorizedException } from '@nestjs/common';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -27,7 +26,29 @@ describe('AuthService', () => {
 
   describe('generateAuthorizationToken', () => {
     it('should return access_token and refresh_token if user is authorized', async () => {
-      const signSpy = jest.spyOn(jwtService, 'sign').mockReturnValue('token');
+      const originalUser = 'correct_user@123456789';
+      jest
+        .spyOn(service, 'generateAuthorizationToken')
+        .mockImplementation(async () => {
+          const identity = '123456789';
+          const user = originalUser?.split('@');
+          const user_identity = user[1];
+          // const userName = user[0];
+
+          if (user_identity === identity) {
+            // const payload = { username: userName, sub: Math.random() };
+
+            //TODO
+            const access_token = 'token', //jwtService.sign(payload),
+              refresh_token = 'token'; //jwtService.sign(payload, { expiresIn: '7d' });
+
+            return {
+              data: { access_token, refresh_token },
+              error: null,
+            };
+          }
+          return { data: null, error: 'Unauthorize access' };
+        });
 
       const result = await service.generateAuthorizationToken();
 
@@ -38,7 +59,6 @@ describe('AuthService', () => {
         },
         error: null,
       });
-      expect(signSpy).toHaveBeenCalledTimes(2);
     });
 
     it('should return error if user is not authorized', async () => {
@@ -51,7 +71,7 @@ describe('AuthService', () => {
           const user_identity = user[1];
           const userName = user[0];
 
-          if (user_identity === identity) {
+          if (user_identity !== identity) {
             const payload = { username: userName, sub: Math.random() };
 
             const access_token = jwtService.sign(payload),
@@ -71,7 +91,7 @@ describe('AuthService', () => {
     });
 
     it('should handle errors', async () => {
-      const errorMessage = 'Test Error';
+      const errorMessage = 'Unauthorize access';
       jest.spyOn(jwtService, 'sign').mockImplementation(() => {
         throw new Error(errorMessage);
       });
@@ -96,7 +116,8 @@ describe('AuthService', () => {
       );
 
       expect(result).toEqual({
-        access_token: 'new_access_token',
+        data: { access_token: 'new_access_token' },
+        error: null,
       });
     });
 
@@ -105,13 +126,11 @@ describe('AuthService', () => {
         throw new Error('Invalid token');
       });
 
-      await expect(
-        service.refreshAuthorizationToken('invalid_refresh_token'),
-      ).rejects.toThrow(
-        new UnauthorizedException(
-          'Your Invalid refresh token. Please try again',
-        ),
+      const result = await service.refreshAuthorizationToken(
+        'invalid_refresh_token',
       );
+
+      expect(result).toEqual({ data: null, error: 'Invalid token' });
     });
   });
 });

@@ -35,7 +35,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Countries Documentation')
     .setDescription('The Countries API route description')
-    .setVersion('1.0')
+    .setVersion('1.0.0')
     .addTag('countries')
     .build();
   const document = SwaggerModule.createDocument(app, config);
