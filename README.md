@@ -168,8 +168,6 @@ The `package.json` includes several scripts for common tasks:
 
 The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:<use_your_PORT_number>/doc`.
 
-### Setting Up Swagger
-
 ### Error Monitoring 
 
 **with Sentry** \
