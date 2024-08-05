@@ -166,11 +166,13 @@ The `package.json` includes several scripts for common tasks:
 
 ### API Documentation
 
-BASE_URL: `https://staging.com.ng`
+BASE_URL: `https://smartop.aievens.com.ng`
 
-The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:<use_your_PORT_number>/doc` locally, and for production at `https://staging.com.ng/doc`
+The project uses Swagger for API documentation. Once the project is running, you can access the Swagger UI at `http://localhost:<use_your_PORT_number>/doc` locally, and for production at `https://smartop.aievens.com.ng/doc`
 
-The project live API - `https://staging.com.ng/api/v1/<endpoint>`. All endpoints are prefix with `/api/v1`
+The project live API - `https://smartop.aievens.com.ng/api/v1/<endpoint>`. All endpoints are prefix with `/api/v1`
+
+NOTE: Due to the data encryption setup on `production` environment in the application and we don't have client side to receive and decrypt. The live environment is set to `development` which do not use data encryption
 
 ### Error Monitoring 
 
