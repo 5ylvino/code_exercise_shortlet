@@ -101,8 +101,8 @@ Sylvester Ekweozor
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-repository/backend_exercise_sylvester.git
-   cd backend_exercise_sylvester
+   git clone https://github.com/5ylvino/code_exercise_shortlet.git
+   cd code_exercise_shortlet
    ```
 
 2. **Install dependencies:**
