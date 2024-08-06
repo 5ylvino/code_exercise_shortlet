@@ -117,6 +117,11 @@ Sylvester Ekweozor
 
 Create a `.env` file at the root of the project and configure the following environment variables after copying the template from `local.env`  as specified
 
+ Simply use this command on your project terminal:
+
+   ```bash
+   cp -rf local.env .env
+   ```
 
 ### Scripts
 
