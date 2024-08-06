@@ -188,7 +188,7 @@ Sentry is integrated for error monitoring. Make sure to configure your Sentry DS
   ```
 
 **with server log** \
-We also extend the nextjs server logging to custom log file. To make it easy for tracking and tracing errors easily.
+The app also extended the nextjs server logging to custom log file. To make it easy for download, tracking and tracing errors easily.
 The `nestjs.log` is located at the root of the project and it is an automatic generated file.
 
 ### Conclusion
