@@ -13,7 +13,7 @@ This project implements a REST API using TypeScript and the NestJS framework, in
 #### Security Features
 - **Helmet**: Helps secure the app by setting various HTTP headers 
 - **Passport**: Middleware for authentication
-- **JWT**: JSON Web Token support for secure authentication
+- **JWT**: JSON Web Token support for secure authentication. Set to expire every `10 minutes`
 - **Rate Limiting**
 - **Class-validator and TypeORM for serialisation**
 - **Use env to keep sensitive data secured**
