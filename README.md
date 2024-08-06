@@ -151,6 +151,14 @@ The `package.json` includes several scripts for common tasks:
   yarn start:dev
   ```
 
+- **Run unit test:**
+
+  Using Yarn:
+
+  ```bash
+  yarn test
+  ```
+
 ### Running the Application
 
 1. **Build the project:**
